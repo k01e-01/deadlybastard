@@ -23,6 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0587335, 0, 0.760233)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0899037, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0603757, 0)
 shape = SubResource("BoxShape3D_ujrbf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]

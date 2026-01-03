@@ -46,11 +46,11 @@ func _physics_process(delta: float) -> void:
 			landing_animation(landing_velocity)
 			landing_velocity = 0
 
-		speed = run_speed
+		speed = walk_speed
 		if Input.is_action_pressed("crouch"):
 			speed = crouch_speed
-		elif Input.is_action_pressed("walk"):
-			speed = walk_speed
+		elif Input.is_action_pressed("run"):
+			speed = run_speed
 
 	if Input.is_action_pressed("crouch"):
 		$CollisionShape3D.shape.height = lerp($CollisionShape3D.shape.height, 1.38, 0.1)

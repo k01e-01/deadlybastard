@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://jyncanbkjjnq"]
 
-[ext_resource type="Script" uid="uid://c1ra6l46652u8" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="AudioStream" uid="uid://eqlentp01xuq" path="res://player/sounds/footsteps/footstep_1.wav" id="2_2ieo8"]
 [ext_resource type="AudioStream" uid="uid://by8dmshhu4ejq" path="res://player/sounds/footsteps/footstep_2.wav" id="3_ebec5"]
 [ext_resource type="AudioStream" uid="uid://dqxxb37fiv0jn" path="res://player/sounds/footsteps/footstep_3.wav" id="4_yllr7"]
@@ -53,6 +53,7 @@ cast_shadow = 0
 mesh = SubResource("CylinderMesh_oul6g")
 
 [node name="CeilingDetector" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78054, 0)
 target_position = Vector3(0, 2.1, 0)
 
 [node name="Crosshair" type="Control" parent="."]
