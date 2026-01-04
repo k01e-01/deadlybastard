@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnkk8st633g6r"]
+[gd_scene load_steps=13 format=3 uid="uid://bnkk8st633g6r"]
 
 [ext_resource type="PackedScene" uid="uid://jyncanbkjjnq" path="res://player/player.tscn" id="1_fbv0t"]
 [ext_resource type="Texture2D" uid="uid://v2b5twl0oxhy" path="res://assets/icon.svg" id="2_4peha"]
+[ext_resource type="Script" path="res://billboard.gd" id="3_vqijf"]
+[ext_resource type="Texture2D" uid="uid://do31l4bji5mph" path="res://assets/beater.png" id="4_vk2b7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ujrbf"]
 size = Vector3(20, 0.1, 20)
@@ -13,6 +15,42 @@ uv1_scale = Vector3(10, 10, 10)
 [sub_resource type="PlaneMesh" id="PlaneMesh_uqo5h"]
 material = SubResource("StandardMaterial3D_qwg1h")
 size = Vector2(20, 20)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0cug7"]
+radius = 1.62162
+height = 5.20227
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh551"]
+atlas = ExtResource("4_vk2b7")
+region = Rect2(0, 0, 395, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65cpd"]
+atlas = ExtResource("4_vk2b7")
+region = Rect2(395, 0, 395, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bn2x"]
+atlas = ExtResource("4_vk2b7")
+region = Rect2(790, 0, 395, 520)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_omrhq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh551")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_65cpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bn2x")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_65cpd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node3D" type="Node3D"]
 
@@ -28,3 +66,16 @@ shape = SubResource("BoxShape3D_ujrbf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_uqo5h")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54173, 2.4713, 2.34156)
+script = ExtResource("3_vqijf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("CapsuleShape3D_0cug7")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="StaticBody3D2"]
+sprite_frames = SubResource("SpriteFrames_omrhq")
+autoplay = "default"
+frame_progress = 0.344094
+speed_scale = 1.5
