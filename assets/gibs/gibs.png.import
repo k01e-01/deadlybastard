@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dln6c24wcavfg"
-path.s3tc="res://.godot/imported/gib1.png-ac0915b568d0e6c503b65a7c5f3f8525.s3tc.ctex"
+uid="uid://bo0pirw8uokif"
+path.s3tc="res://.godot/imported/gibs.png-94210b0d994410258bf3a1f020848a9f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/gibs/gib1.png"
-dest_files=["res://.godot/imported/gib1.png-ac0915b568d0e6c503b65a7c5f3f8525.s3tc.ctex"]
+source_file="res://assets/gibs/gibs.png"
+dest_files=["res://.godot/imported/gibs.png-94210b0d994410258bf3a1f020848a9f.s3tc.ctex"]
 
 [params]
 
